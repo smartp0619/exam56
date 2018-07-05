@@ -6,5 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Exam extends Model
 {
-    //
+    protected $fillable = [
+        'title', 'user_id', 'enable',
+    ];
+
+    public function topics()
+    {
+        return $this->hasMany('App\Topic');
+    }
 }
